@@ -36,7 +36,7 @@ function maDeuxiemeFonction() {
 
 var resultat = maDeuxiemeFonction();
 console.log(resultat);
-console.log("val de z en dehors de son scope : " + z); // ne peut pas s'afficher
+//console.log("val de z en dehors de son scope : " + z); // ne peut pas s'afficher
 // car la portée de la variable z ne vas au-delà de la fonction où elle est déclarée.
 
 
@@ -53,7 +53,7 @@ var monObj2 = {
 	nom: "HAMELIN",
 	prenom: "Paul",
 	age: 18,
-	adresse = function() {
+	adresse: function() {
 		return "44 rue du paradis";
 	}
 }
