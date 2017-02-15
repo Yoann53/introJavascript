@@ -57,8 +57,15 @@ var monObj2 = {
 		return "44 rue du paradis";
 	}
 }
-
 console.log(monObj2.adresse());
+
+//Ajout d'une propriété et d'une méthode à mon objet "monObj2"
+monObj2.codePostal = 72000;
+monObj2.nomComplet = function() {
+	return this.nom + " " + this.prenom;
+}
+console.log(monObj2);
+console.log(monObj2.nomComplet());
 
 //Objet calculette
 var calculette = {
