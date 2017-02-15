@@ -41,8 +41,8 @@ console.log(resultat);
 
 
 //Fonction avec arguments
-function maTroisiemeFonction($arg1, $arg2) {
-	return $arg1 * $arg2;
+function maTroisiemeFonction(arg1, arg2) {
+	return arg1 * arg2;
 }
 
 var resultat2 = maTroisiemeFonction(10, 20);
@@ -59,6 +59,83 @@ var monObj2 = {
 }
 
 console.log(monObj2.adresse());
+
+//Objet calculette
+var calculette = {
+	addition: function(nb1, nb2) {
+		res = parseInt(nb1) + parseInt(nb2);
+		return res;
+	},
+	soustraction: function(nb1, nb2) {
+		return parseInt(nb1) - parseInt(nb2);
+	},
+	multiplication: function(nb1, nb2) {
+		return parseInt(nb1) * parseInt(nb2);
+	},
+	division: function(nb1, nb2) {
+		return parseInt(nb1) / parseInt(nb2);
+	}
+}
+
+var operation = prompt("Entrer une opération.");
+var nombre1 = prompt("Entrer un premier nombre");
+var nombre2 = prompt("Entrer un deuxième nombre");
+
+if(operation === "+" || operation === "addition") {
+
+	alert(calculette.addition(nombre1, nombre2));
+
+} else if (operation === "-" || operation === "soustraction") {
+
+	alert(calculette.soustraction(nombre1, nombre2));
+
+} else if (operation === "*" || operation === "multiplication") {
+
+	alert(calculette.multiplication(nombre1, nombre2));
+
+} else if(operation === "/" || operation === "division") {
+
+	alert(calculette.division(nombre1, nombre2));
+
+} else {
+
+	alert("Je ne peux pas effectuer votre demande.");
+
+}
+
+
+switch (operation) {
+
+	case "+": alert(calculette.addition(nombre1, nombre2)); break;
+	case "-": alert(calculette.soustraction(nombre1, nombre2)); break;
+	case "*": alert(calculette.multiplication(nombre1, nombre2)); break;
+	case "/": alert(calculette.division(nombre1, nombre2)); break;
+
+	case "addition": alert(calculette.addition(nombre1, nombre2)); break;
+	case "soustraction": alert(calculette.soustraction(nombre1, nombre2)); break;
+	case "multiplication": alert(calculette.multiplication(nombre1, nombre2)); break;
+	case "division": alert(calculette.division(nombre1, nombre2)); break;
+
+	default: alert("Je ne peux pas effectuer votre demande"); break;
+}
+
+//Objet avec constructeur
+function monObjConstructeur(nom, prenom, age) {
+	this.nom = nom;
+	this.prenom = prenom;
+	this.age = age;
+}
+
+//Instanciation d'un objet avec un constructeur
+monObj3 = new monObjConstructeur("GAUCHARD", "Yoann", 30 + "ans");
+alert(monObj3.nom + " " + monObj3.prenom + "de l'age de " + monObj3.age);
+
+
+
+
+
+
+
 
 
 
