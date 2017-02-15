@@ -9,7 +9,41 @@
 	</head>
 	<body>
 
+		<label id="lbl_nom">Nom</label>
+		<input id="text_nom" type="text" value="">
+		<label id="lbl_prenom" style="color:red">Prenom</label>
+		<input id="text_prenom" type="text" value="">
+		<p>blablabalbalbalablbalablablablbalbalbalbalbalbalbla</p> 
+		<input id="button" type="button" value="changer de couleur" onClick="javascript: changerCouleur()"></input> 
 		<!-- Inclusion d'un fichier javascript : toujours les placer avant la balise de fermeture body pour que les éléments html au-dessus soient chargés en premier lieu -->
-		<script src="date.js"></script>
+		<script>
+			var lblNom = document.getElementById("lbl_nom");
+			console.log(lblNom);
+			lblNom.innerHTML = "Nom de famille";
+			var id = lblNom.getAttribute('id');
+			console.log(id);
+
+			var newElmt = document.createElement('label');
+			newElmt.innerHTML = "ce label est généré par mon script !";
+
+			var lblPrenom = document.getElementById('lbl_prenom');
+			lblPrenom.parentNode.insertBefore(newElmt, lblPrenom);
+
+			function changerCouleur() {
+				// if(lblPrenom.getAttribute('style') === 'color:red') {
+				// 	lblPrenom.setAttribute('style', 'color:blue');
+				// } else {
+				// 	lblPrenom.setAttribute('style', 'color:red');
+				// }
+				setInterval(function(){
+					if(lblPrenom.style.color === "red") {
+						lblPrenom.style.color = "blue";
+					} else {
+						lblPrenom.style.color = "red";
+					}
+				}, 100);
+			}
+
+		</script>
 	</body>
 </html>
